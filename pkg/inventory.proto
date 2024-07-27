@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "github.com/JacobRWebb/InventoryManagement.Inventory.Api/pkg/proto/InventoryClient";
+
+service InventoryClient {
+    rpc AddItem(AddItemRequest) returns (AddItemResponse) {}
+    rpc GetItem(GetItemRequest) returns (GetItemResponse) {}
+    rpc GetItems(GetItemsRequest) returns (GetItemsResponse) {}
+}
+
+message Item {
+    string name = 1;
+    string description = 2;
+}
+
+message AddItemRequest {
+    string name = 1;
+    string description = 2;
+}
+
+message AddItemResponse {
+    bool is_success = 1;
+}
+
+message GetItemRequest {
+    string id = 1;
+}
+
+message GetItemResponse {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message GetItemsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetItemsResponse {
+    repeated Item items = 1;
+    int32 total_count = 2;
+}
