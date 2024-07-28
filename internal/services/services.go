@@ -1,6 +1,6 @@
 package services
 
-import InventoryClient "github.com/JacobRWebb/InventoryManagement.Inventory.Api/internal/protos/inventory"
+import InventoryClient "github.com/JacobRWebb/InventoryManagement.Inventory.Api/pkg"
 
 type Services struct {
 	InventoryService InventoryService
